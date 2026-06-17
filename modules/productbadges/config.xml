@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+    <name>productbadges</name>
+    <displayName>Product Badges</displayName>
+    <version>1.0.0</version>
+    <author>Aitziber</author>
+    <tab>front_office_features</tab>
+    <need_instance>0</need_instance>
+    <is_configurable>1</is_configurable>
+    <bootstrap>1</bootstrap>
+    <description><![CDATA[Adds visual badges for products in the catalog.]]></description>
+    <ps_versions_compliancy>
+        <min>1.7.0.0</min>
+        <max>1.7.8.99</max>
+    </ps_versions_compliancy>
+</module>
