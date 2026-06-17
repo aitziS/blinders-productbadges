@@ -28,11 +28,35 @@ class ProductBadges extends Module
 
     public function install()
     {
-        return parent::install();
+        if (!parent::install()) {
+            return false;
+        }
+
+        include_once __DIR__ . '/sql/install.php';
+        if (!function_exists('productbadges_install_sql')) {
+            parent::uninstall();
+            return false;
+        }
+
+        if (!productbadges_install_sql()) {
+            parent::uninstall();
+            return false;
+        }
+
+        return true;
     }
 
     public function uninstall()
     {
-        return parent::uninstall();
+        if (!parent::uninstall()) {
+            return false;
+        }
+
+        include_once __DIR__ . '/sql/uninstall.php';
+        if (function_exists('productbadges_uninstall_sql')) {
+            return (bool) productbadges_uninstall_sql();
+        }
+
+        return true;
     }
 }
